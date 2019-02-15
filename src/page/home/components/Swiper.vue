@@ -30,11 +30,11 @@ export default {
       swiperlist: [
         {
           id: 1,
-          imgUrl: '/static/img/20190214105107.8daf93b.jpg'
+          imgUrl: 'http://v1.lzy.com/images/20190214105107.jpg'
         },
         {
           id: 2,
-          imgUrl: '/static/img/20190214105138.bced905.jpg'
+          imgUrl: 'http://v1.lzy.com/images/20190214105138.jpg'
         }
       ]
     }
