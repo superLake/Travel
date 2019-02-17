@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-image">
@@ -17,6 +17,12 @@ export default {
   name: 'Icons',
   data () {
     return {
+      swiperOption: {
+        autoplay: false
+        // some swiper options/callbacks
+        // 所有的参数同 swiper 官方 api 参数
+        // ...
+      },
       iconsList: [
         {
           id: '0001',
