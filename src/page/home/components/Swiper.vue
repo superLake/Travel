@@ -1,11 +1,12 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
+    <!--因为一开始，ajax请求前swiperList还是空数组，所以导致渲染出来的效果默认先展示最后一张，为了解决这个问题，我们添加v-if="swiperList.length"，即当数组有东西时才把swiper显然出来-->
+    <swiper :options="swiperOption" v-if="showSwiper">
       <!-- slides -->
       <!--<swiper-slide>-->
         <!--<img class="swiper-img" src="../../../assets/images/20190214105138.jpg" alt="">-->
       <!--</swiper-slide>-->
-      <swiper-slide v-for="item of swiperlist" :key="item.id">
+      <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class="swiper-img" :src=item.imgUrl alt="">
       </swiper-slide>
       <!--<swiper-slide>I'm Slide 3</swiper-slide>-->
@@ -21,23 +22,21 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    swiperList: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         autoplay: 3000,
         loop: true
-      },
-      swiperlist: [
-        {
-          id: 1,
-          imgUrl: 'http://v1.lzy.com/images/20190214105107.jpg'
-        },
-        {
-          id: 2,
-          imgUrl: 'http://v1.lzy.com/images/20190214105138.jpg'
-        }
-      ]
+      }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.swiperList.length
     }
   }
 }
@@ -50,7 +49,7 @@ export default {
     overflow :hidden
     width: 100%
     height: 0
-    padding-bottom :46.17%
+    padding-bottom :31.25%
     background:#eee
   .swiper-img
     width:100%

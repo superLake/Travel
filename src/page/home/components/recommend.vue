@@ -18,25 +18,8 @@
 <script>
 export default{
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: 1,
-        title: '深圳野生动物园',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/2e/d9363ce50a88c8c5ff5a138c67687cd4.water.jpg_200x200_1c15c8f5.jpg',
-        desc: '去旅游，就来深圳野生动物园'
-      }, {
-        id: 2,
-        title: '深圳野生动物园',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/2e/d9363ce50a88c8c5ff5a138c67687cd4.water.jpg_200x200_1c15c8f5.jpg',
-        desc: '去旅游，就来深圳野生动物园'
-      }, {
-        id: 3,
-        title: '深圳野生动物园',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/2e/d9363ce50a88c8c5ff5a138c67687cd4.water.jpg_200x200_1c15c8f5.jpg',
-        desc: '去旅游，就来深圳野生动物园'
-      }]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>

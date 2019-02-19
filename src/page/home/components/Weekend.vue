@@ -19,25 +19,8 @@
 <script>
 export default{
   name: 'HomeWeekend',
-  data () {
-    return {
-      weekendList: [{
-        id: 1,
-        title: '清远周边逛',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg',
-        desc: '人人都有一双发现美的眼睛'
-      }, {
-        id: 2,
-        title: '清远周边逛',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg',
-        desc: '人人都有一双发现美的眼睛'
-      }, {
-        id: 3,
-        title: '清远周边逛',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg',
-        desc: '人人都有一双发现美的眼睛'
-      }]
-    }
+  props: {
+    weekendList: Array
   }
 }
 </script>
@@ -45,13 +28,12 @@ export default{
   @import '~style/mixins.styl'
   .title
     background:#eee
-    margin-top:.2rem
     line-height :.8rem
     text-indent :.2rem
   .item-img-wrapper
     overflow:hidden
     height :0
-    padding-bottom: 33.7%
+    padding-bottom: 38.01%
     .item-img
       width :100%
       padding :.1rem
