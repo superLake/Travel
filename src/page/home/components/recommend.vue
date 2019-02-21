@@ -26,10 +26,7 @@ export default{
 <style lang="stylus" scoped>
 @import '~style/mixins.styl'
 .title
-  background:#eee
-  margin-top:.2rem
-  line-height :.8rem
-  text-indent :.2rem
+  title()
 .item
   display: flex
   height: 1.9rem

@@ -27,9 +27,7 @@ export default{
 <style lang="stylus" scoped>
   @import '~style/mixins.styl'
   .title
-    background:#eee
-    line-height :.8rem
-    text-indent :.2rem
+    title()
   .item-img-wrapper
     overflow:hidden
     height :0
