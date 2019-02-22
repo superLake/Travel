@@ -2,8 +2,8 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :hotCities="hotCitiesList"></city-list>
-    <city-alphabet></city-alphabet>
+    <city-list :hotCities="hotCitiesList" :cities="citiesList"></city-list>
+    <city-alphabet :cities="citiesList"></city-alphabet>
   </div>
 </template>
 <script>
@@ -23,7 +23,7 @@ export default{
   data () {
     return {
       hotCitiesList: [],
-      citiesList: []
+      citiesList: {}
     }
   },
   methods: {
