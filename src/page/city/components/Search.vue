@@ -5,13 +5,20 @@
     </div>
     <div class="searchList-wrapper" ref="searchList" v-show="searchContent">
       <ul class="searchList">
-        <li class="searchList-item border-bottom" v-for="item of list" :key="item.id" :ref="item.id">{{item.name}}</li>
+        <li
+          class="searchList-item border-bottom"
+          v-for="item of list"
+          :key="item.id"
+          :ref="item.id"
+          @click="handleClickCity(item.name)"
+        >{{item.name}}</li>
         <li class="searchList-item border-bottom nothing" v-show="!list.length">无数据</li>
       </ul>
     </div>
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
 import BScroll from 'better-scroll'
 export default{
   name: 'CitySearch',
@@ -46,6 +53,13 @@ export default{
         this.list = result
       }, 30)
     }
+  },
+  methods: {
+    handleClickCity (city) {
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapActions(['changeCity'])
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.searchList)
