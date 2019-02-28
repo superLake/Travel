@@ -2,19 +2,9 @@
   <div class="wrapper">
     <!--因为一开始，ajax请求前swiperList还是空数组，所以导致渲染出来的效果默认先展示最后一张，为了解决这个问题，我们添加v-if="swiperList.length"，即当数组有东西时才把swiper显然出来-->
     <swiper :options="swiperOption" v-if="showSwiper">
-      <!-- slides -->
-      <!--<swiper-slide>-->
-        <!--<img class="swiper-img" src="../../../assets/images/20190214105138.jpg" alt="">-->
-      <!--</swiper-slide>-->
       <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class="swiper-img" :src=item.imgUrl alt="">
       </swiper-slide>
-      <!--<swiper-slide>I'm Slide 3</swiper-slide>-->
-      <!--<swiper-slide>I'm Slide 4</swiper-slide>-->
-      <!--<swiper-slide>I'm Slide 5</swiper-slide>-->
-      <!--<swiper-slide>I'm Slide 6</swiper-slide>-->
-      <!--<swiper-slide>I'm Slide 7</swiper-slide>-->
-      <!-- Optional controls -->
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
   </div>

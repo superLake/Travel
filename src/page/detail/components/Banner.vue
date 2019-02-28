@@ -1,23 +1,46 @@
 <template>
-  <div class="banner">
-    <img
-      class="banner-image"
-      src="http://img1.qunarzz.com/sight/p0/1508/2e/d9363ce50a88c8c5ff5a138c67687cd4.water.jpg_600x330_28bda6b0.jpg"
-    />
-    <div class="banner-info">
-      <div class="banner-title">
-        深圳野生动物园(AAAA景区)
-      </div>
-      <div class="banner-number">
-        <span class="iconfont">&#xe791;</span>
-        39
+  <div>
+    <div class="banner" @click="handleShowUp">
+      <img
+        class="banner-image"
+        src="http://img1.qunarzz.com/sight/p0/1508/2e/d9363ce50a88c8c5ff5a138c67687cd4.water.jpg_600x330_28bda6b0.jpg"
+      />
+      <div class="banner-info">
+        <div class="banner-title">
+          深圳野生动物园(AAAA景区)
+        </div>
+        <div class="banner-number">
+          <span class="iconfont">&#xe791;</span>
+          39
+        </div>
       </div>
     </div>
+    <common-gallary :gallaryImg="gallaryImg" v-show="isShow" @shutDownGallary="handleShutDown"></common-gallary>
   </div>
 </template>
 <script>
+import CommonGallary from 'common/gallary/Gallary'
 export default{
-  name: 'Banner'
+  name: 'Banner',
+  props: {
+    gallaryImg: Array
+  },
+  components: {
+    CommonGallary
+  },
+  data () {
+    return {
+      isShow: false
+    }
+  },
+  methods: {
+    handleShutDown () {
+      this.isShow = false
+    },
+    handleShowUp () {
+      this.isShow = true
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
