@@ -38,7 +38,12 @@ export default {
     }
   },
   activated () {
+    // 全局事件绑定，不止会对本组件产生效果，而且会对其他组件也造成影响，就拿下面例子来说，就算在其他页面作滚动操作，依然会触发该事件
+    // 所以我们要进行全局事件的解绑,deactivated生命周期函数可以达到该目的
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
