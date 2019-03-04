@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <div class="header-abs" v-show="showHeader">
-      <div class="iconfont header-back-icon">&#xe624;</div>
+      <router-link to="/">
+        <div class="iconfont header-back-icon">&#xe624;</div>
+      </router-link>
     </div>
     <div class="header-back" v-show="!showHeader" :style="styleObj">
       <router-link to="/">
@@ -62,6 +64,8 @@ export default {
     background: rgba(0,0,0,0.8)
     border-radius: .4rem
     color:#fff
+    .header-back-icon
+      color:#fff
   .header-back
     position:fixed
     top:0
